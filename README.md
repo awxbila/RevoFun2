@@ -124,6 +124,16 @@ Karena project ini bersifat statis, deploy paling praktis adalah dengan **GitHub
    - **Folder:** `/ (root)`
 5. Simpan pengaturan, lalu tunggu beberapa saat hingga link website aktif
 
+### 🔗 Live Demo
+
+Website dapat diakses di:
+
+```text
+http://revofun.web.id/
+```
+
+Atau klik langsung: [revofun.web.id](http://revofun.web.id/)
+
 ---
 
 ## 🛠️ Teknologi yang Digunakan
