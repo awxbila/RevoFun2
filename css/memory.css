@@ -1,0 +1,249 @@
+:root {
+  --bg: #1a1b20;
+  --panel: #b92438;
+  --topbar: #0d4f74;
+  --text: #f8fafc;
+  --cols: 3;
+  --card-size: 82px;
+  --gap: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.memory-shell {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.memory-board {
+  min-height: 100vh;
+  background: var(--panel);
+  box-shadow: none;
+}
+
+.memory-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: var(--topbar);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.memory-stage {
+  position: relative;
+  min-height: calc(100vh - 48px);
+  padding: 28px 24px 34px;
+  text-align: center;
+}
+
+#statusText {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.lives {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.life {
+  color: #ff4d6d;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.life.lost {
+  color: #1f2937;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ffe082;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+#startBtn {
+  min-width: 220px;
+  padding: 18px 28px;
+  border-radius: 14px;
+  font-size: 1.25rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.secondary-btn {
+  background: #182633;
+  color: #f8fafc;
+}
+
+.top-home-btn {
+  padding: 8px 14px;
+  font-size: 0.76rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--card-size));
+  gap: var(--gap);
+  justify-content: center;
+  align-content: start;
+  min-height: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.card {
+  width: var(--card-size);
+  height: calc(var(--card-size) * 1.16);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+
+.card.flipped .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background:
+    linear-gradient(135deg, #0a1b4f 0 18%, transparent 18%),
+    repeating-linear-gradient(
+      45deg,
+      #ffbf2f 0 12px,
+      #ff603b 12px 24px,
+      #081f56 24px 36px,
+      #11b1c6 36px 48px
+    );
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.22);
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background: #fff7e8;
+  border: 2px solid #ffd166;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  color: #111827;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+.card.matched {
+  filter: saturate(1.08);
+}
+
+#congrats {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  margin: 0;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #052e16;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .memory-topbar {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.72rem;
+  }
+
+  .memory-stage {
+    min-height: auto;
+    padding: 16px 10px 22px;
+  }
+
+  .controls {
+    width: calc(100% - 20px);
+  }
+
+  #startBtn {
+    min-width: 180px;
+    font-size: 1.05rem;
+    padding: 14px 22px;
+  }
+
+  .grid {
+    min-height: 180px;
+    gap: 8px;
+  }
+}

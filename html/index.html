@@ -1,54 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RevoFun - Gaming Company</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
-    <header>
-      <h1>🎮 RevoFun</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="rps.html">Suit (Batu, Gunting, Kertas)</a></li>
-          <li><a href="memory.html">Memory Card</a></li>
-          <li><a href="avoid.html">Hindari Benda Jatuh</a></li>
-        </ul>
-      </nav>
-    </header>
+  <body class="home-page">
+    <main class="arcade-home">
+      <section class="landing-view">
+        <header class="hero-header">
+          <div class="brand-badge brand-logo-wrap" aria-label="RevoFun logo">
+            <img
+              src="../assets/RFlogo.png"
+              alt="RevoFun Logo"
+              class="brand-logo"
+            />
+          </div>
+        </header>
 
-    <main>
-      <section class="intro">
-        <h2>Selamat Datang di RevoFun</h2>
-        <p>
-          Kami menghadirkan game sederhana dan menyenangkan langsung di
-          browsermu. Pilih permainan favoritmu dan mulai bermain!
-        </p>
+        <section class="hero-copy">
+          <h1>Welcome to <span>RevoFun</span></h1>
+          <p>Choose your game and start playing!</p>
+        </section>
+
+        <section class="games-grid">
+          <article class="game-card card-rps">
+            <div class="card-icon">✊</div>
+            <h3>Rock Paper Scissors</h3>
+            <p>Challenge the computer and be the first to reach 10 points.</p>
+            <a href="rps.html" class="btn btn-blue">Play Now</a>
+          </article>
+
+          <article class="game-card card-memory">
+            <div class="card-icon">🃏</div>
+            <h3>Memory Match</h3>
+            <p>Find all matching pairs and survive through each level.</p>
+            <a href="memory.html" class="btn btn-purple">Play Now</a>
+          </article>
+
+          <article class="game-card card-car">
+            <div class="card-icon">🏎️</div>
+            <h3>Car Racing</h3>
+            <p>Dodge enemy cars and last as long as you can on the track.</p>
+            <a href="car.html" class="btn btn-green">Play Now</a>
+          </article>
+        </section>
       </section>
 
-      <section class="games-preview">
-        <div class="game-card">
-          <h3>Suit (Batu, Gunting, Kertas)</h3>
-          <p>Tantang komputer dalam permainan klasik ini.</p>
-          <a href="rps.html" class="btn">Mainkan</a>
-        </div>
-        <div class="game-card">
-          <h3>Memory Card</h3>
-          <p>Uji daya ingatmu dengan mencari pasangan kartu.</p>
-          <a href="memory.html" class="btn">Mainkan</a>
-        </div>
-        <div class="game-card">
-          <h3>Hindari Benda Jatuh</h3>
-          <p>Gerakkan karakter untuk bertahan selama mungkin.</p>
-          <a href="avoid.html" class="btn">Mainkan</a>
-        </div>
+      <section class="about-revofun" aria-labelledby="about-revofun-title">
+        <p class="about-label">Tentang RevoFun</p>
+        <h2 id="about-revofun-title">Game Online Seru dan Gratis</h2>
+        <p>
+          RevoFun adalah tempat bermain mini game yang ringan, seru, dan mudah
+          diakses langsung dari browser. Kamu bisa menikmati berbagai permainan
+          tanpa instalasi, tanpa ribet, dan cocok dimainkan kapan saja.
+        </p>
+
+        <h3>Pilihan Game Kami</h3>
+        <p>
+          Saat ini RevoFun menyediakan game seperti
+          <strong>Rock Paper Scissors</strong>, <strong>Memory Match</strong>,
+          dan <strong>Car Racing</strong>. Setiap game dibuat agar menyenangkan,
+          responsif, dan cocok untuk hiburan singkat maupun tantangan seru.
+        </p>
+
+        <h3>Mulai Bermain</h3>
+        <p>
+          Pilih game favoritmu dari daftar di atas lalu tekan tombol
+          <strong>Play Now</strong>. RevoFun akan terus berkembang dengan
+          tampilan yang lebih menarik dan koleksi game yang lebih banyak.
+        </p>
+        <footer class="home-footer">
+          <p>© 2025 RevoFun by Bila. All rights reserved.</p>
+        </footer>
       </section>
     </main>
-
-    <footer>
-      <p>© 2025 RevoFun. All rights reserved.</p>
-    </footer>
   </body>
 </html>

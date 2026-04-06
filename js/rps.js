@@ -1,56 +1,120 @@
-// Jangan ambil nilai lama dari localStorage untuk tampilan awal.
-// Tetap simpan di variabel jika mau, tapi jangan dipakai sebelum main.
-let score = Number(localStorage.getItem("rpsScore") || 0);
-let firstMove = true;
+const startSection = document.getElementById("start-section");
+const gameSection = document.getElementById("game-section");
+const playBtn = document.getElementById("playBtn");
+const resetBtn = document.getElementById("resetBtn");
+const themeToggle = document.getElementById("themeToggle");
+const resultEl = document.getElementById("result");
+const playerScoreEl = document.getElementById("playerScore");
+const computerScoreEl = document.getElementById("computerScore");
+const playerMoveEl = document.getElementById("playerMove");
+const computerMoveEl = document.getElementById("computerMove");
+const choiceButtons = document.querySelectorAll(".choice-btn");
+
+const moveIcons = {
+  rock: "✊",
+  paper: "✋",
+  scissors: "✌️",
+};
+
+let playerScore = 0;
+let computerScore = 0;
+let matchOver = false;
+
+function updateScoreboard() {
+  playerScoreEl.textContent = playerScore;
+  computerScoreEl.textContent = computerScore;
+}
+
+function setResult(message, type = "") {
+  resultEl.textContent = message;
+  resultEl.className = `result-text ${type}`.trim();
+}
+
+function resetMatch() {
+  playerScore = 0;
+  computerScore = 0;
+  matchOver = false;
+  resetBtn.hidden = true;
+
+  updateScoreboard();
+  setResult("First to 10 points wins!");
+  playerMoveEl.textContent = moveIcons.rock;
+  computerMoveEl.textContent = moveIcons.rock;
+
+  choiceButtons.forEach((button) => {
+    button.disabled = false;
+  });
+}
 
 function startGame() {
-  const name = document.getElementById("playerNameInput").value.trim();
-  if (!name) {
-    alert("Please enter your name first!");
-    return;
-  }
-
-  localStorage.setItem("playerName", name);
-  document.getElementById("playerName").textContent = name;
-
-  // Tampilkan area game, tapi tidak menampilkan score
-  document.getElementById("name-section").style.display = "none";
-  document.getElementById("game-section").style.display = "block";
-
-  // Pastikan teks skor kosong meskipun ada nilai lama di localStorage
-  document.getElementById("score").textContent = "";
+  startSection.style.display = "none";
+  gameSection.hidden = false;
+  gameSection.style.display = "block";
+  resetMatch();
 }
 
 function play(playerChoice) {
-  // Pertama kali user memilih, barulah tampilkan wrapper & nilai awal
-  if (firstMove) {
-    document.getElementById("score-wrap").style.display = "block";
-    // Tampilkan 0 agar memulai dari nol secara visual
-    document.getElementById("score").textContent = 0;
-    firstMove = false;
-    // Mulai perhitungan skor dari nol, bukan dari localStorage lama
-    score = 0;
+  if (matchOver) {
+    return;
   }
 
-  const choices = ["rock", "scissors", "paper"];
-  const computer = choices[Math.floor(Math.random() * choices.length)];
-  let result = "";
+  const choices = ["rock", "paper", "scissors"];
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-  if (playerChoice === computer) {
-    result = `Draw! Computer also chose ${computer}`;
-  } else if (
-    (playerChoice === "rock" && computer === "scissors") ||
-    (playerChoice === "scissors" && computer === "paper") ||
-    (playerChoice === "paper" && computer === "rock")
-  ) {
-    result = `You Win! Computer chose ${computer}`;
-    score++;
+  playerMoveEl.textContent = moveIcons[playerChoice];
+  computerMoveEl.textContent = moveIcons[computerChoice];
+
+  if (playerChoice === computerChoice) {
+    setResult("IT'S A DRAW!", "draw");
+    return;
+  }
+
+  const playerWins =
+    (playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "paper" && computerChoice === "rock") ||
+    (playerChoice === "scissors" && computerChoice === "paper");
+
+  if (playerWins) {
+    playerScore += 1;
+    setResult("YOU WON THIS ROUND! 🎉", "player");
   } else {
-    result = `You Lose! Computer chose ${computer}`;
-    if (score > 0) score--;
+    computerScore += 1;
+    setResult("COMPUTER WON THIS ROUND! 🎉", "computer");
   }
 
-  document.getElementById("result").textContent = result;
-  document.getElementById("score").textContent = score;
-  localStorage.setItem("rpsScore", score);
+  updateScoreboard();
+
+  if (playerScore >= 10 || computerScore >= 10) {
+    matchOver = true;
+    choiceButtons.forEach((button) => {
+      button.disabled = true;
+    });
+    resetBtn.hidden = false;
+
+    setResult(
+      playerScore >= 10
+        ? "🎉 YOU WON THE MATCH!"
+        : "🎉 COMPUTER WON THE MATCH!",
+      `match-win ${playerScore >= 10 ? "player" : "computer"}`
+    );
+  }
 }
+
+playBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", resetMatch);
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+  themeToggle.textContent = document.body.classList.contains("light-theme")
+    ? "☀"
+    : "☾";
+});
+
+choiceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    play(button.dataset.choice);
+  });
+});
+
+gameSection.hidden = true;
+updateScoreboard();

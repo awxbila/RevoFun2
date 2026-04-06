@@ -1,34 +1,61 @@
-<body>
-  <header>
-    <h1>Rock, Paper, Scissors</h1>
-  </header>
-  <main>
-    <!-- Name input -->
-    <div id="name-section">
-      <p>Enter your name to start:</p>
-      <input type="text" id="playerNameInput" placeholder="Your name" />
-      <button onclick="startGame()">Start</button>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors - RevoFun</title>
+    <link rel="stylesheet" href="../css/rps.css" />
+  </head>
+  <body>
+    <main class="rps-shell">
+      <section class="rps-card">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
 
-    <!-- Game area (hidden until name entered) -->
-    <div id="game-section" style="display: none">
-      <p>
-        Hello, <span id="playerName"></span>! Choose one and beat the computer!
-      </p>
-      <div>
-        <button onclick="play('rock')">🪨 Rock</button>
-        <button onclick="play('scissors')">✂️ Scissors</button>
-        <button onclick="play('paper')">📜 Paper</button>
-      </div>
-      <h3 id="result"></h3>
+        <div id="start-section" class="start-section">
+          <button id="playBtn" class="play-btn" type="button">PLAY</button>
+          <h1>Rock Paper Scissors<br />with RevoFun</h1>
+        </div>
 
-      <!-- Score wrapper hidden at first -->
-      <p id="score-wrap" style="display: none">
-        Score: <span id="score"></span>
-        <!-- kosong, bukan 0 -->
-      </p>
-      <a href="../html/index.html" class="btn">Back to Home</a>
-    </div>
-  </main>
-  <script src="../js/rps.js"></script>
-</body>
+        <div id="game-section" class="game-section" hidden>
+          <h1 class="game-title">Rock Paper Scissors with RevoFun</h1>
+          <button id="resetBtn" class="reset-btn" type="button" hidden>Start Again</button>
+
+          <div class="scoreboard">
+            <div class="score-item">
+              <span>PLAYER SCORE</span>
+              <strong id="playerScore">0</strong>
+            </div>
+            <div class="score-item">
+              <span>COMPUTER SCORE</span>
+              <strong id="computerScore">0</strong>
+            </div>
+          </div>
+
+          <h2 id="result" class="result-text">First to 10 points wins!</h2>
+
+          <div class="battle-area">
+            <div class="move-box">
+              <div id="playerMove" class="move-icon">✊</div>
+            </div>
+            <span class="vs-text">VS</span>
+            <div class="move-box">
+              <div id="computerMove" class="move-icon">✊</div>
+            </div>
+          </div>
+
+          <p class="helper-text">Choose your move, rock paper or scissors?</p>
+
+          <div class="choices">
+            <button class="choice-btn" type="button" data-choice="rock">ROCK</button>
+            <button class="choice-btn" type="button" data-choice="paper">PAPER</button>
+            <button class="choice-btn" type="button" data-choice="scissors">SCISSORS</button>
+          </div>
+        </div>
+
+        <a href="../html/index.html" class="home-link">← Back to Home</a>
+      </section>
+    </main>
+
+    <script src="../js/rps.js"></script>
+  </body>
+</html>

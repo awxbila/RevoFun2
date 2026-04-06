@@ -2,48 +2,38 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Card - RevoFun</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 80px);
-        gap: 10px;
-        justify-content: center;
-      }
-      .card {
-        width: 80px;
-        height: 80px;
-        background: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        cursor: pointer;
-      }
-      .flipped {
-        background: #00ffcc;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/memory.css" />
   </head>
   <body>
-    <header><h1>Memory Card</h1></header>
-  <main>
-  <!--input name-->
-  <div id="name-section">
-    <p>Enter your name to start:</p>
-    <input type="text" id="playerNameInput" placeholder="Your name">
-    <button onclick="startGame()">Start</button>
-  </div>
+    <main class="memory-shell">
+      <section class="memory-board">
+        <div class="memory-topbar">
+          <span>MEMORY GAME</span>
+          <span id="levelText">LEVEL: 1</span>
+          <a href="../html/index.html" class="btn secondary-btn top-home-btn">Back to Home</a>
+        </div>
 
-  <div id="game-section" style="display:none;">
-    <p>Hello, <span id="playerName"></span>! Match all pairs to win!</p>
-    <div class="grid" id="grid"></div>
+        <div class="memory-stage">
+          <p id="statusText">Cocokkan semua pasangan kartu tanpa salah tebakan.</p>
 
-    <!-- NEW: congrats message -->
-    <h2 id="congrats" style="display:none; margin-top:20px; color:green;"></h2>
-    <a href="../html/index.html" class="btn">Back to Home</a>
-  </div>
-<script src="../js/memory.js"></script>
+          <div class="lives" id="lives" aria-label="Nyawa">
+            <span class="life">❤</span>
+            <span class="life">❤</span>
+            <span class="life">❤</span>
+          </div>
+
+          <div class="controls">
+            <button id="startBtn" type="button">Start Game</button>
+          </div>
+
+          <div class="grid" id="grid" aria-live="polite"></div>
+          <h2 id="congrats"></h2>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/memory.js"></script>
   </body>
 </html>
