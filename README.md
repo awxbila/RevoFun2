@@ -1,18 +1,16 @@
 # 🎮 RevoFun Arcade
 
-**RevoFun Arcade** adalah website mini game berbasis **HTML, CSS, dan JavaScript** dengan tampilan home modern dan beberapa game interaktif yang bisa langsung dimainkan di browser.
+**RevoFun Arcade** adalah kumpulan mini game berbasis **HTML, CSS, dan JavaScript** yang bisa langsung dimainkan di browser tanpa instalasi tambahan. Project ini dibuat dengan gaya arcade modern dan struktur sederhana sehingga mudah dipelajari maupun dikembangkan.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Highlight Project
 
-- Landing page `RevoFun` dengan logo custom dan tampilan arcade modern
-- Section **Tentang RevoFun** terpisah seperti halaman lanjutan
-- Tiga mini game yang bisa dimainkan langsung:
-  - **Rock Paper Scissors**
-  - **Memory Match**
-  - **Car Racing**
-- Desain UI dipisahkan per halaman agar lebih rapi dan mudah dikembangkan
+- **Landing page** modern dengan branding `RevoFun`
+- Terdiri dari **3 mini game interaktif**
+- Dibuat tanpa framework, murni dengan **Vanilla JavaScript**
+- Struktur file rapi dan cocok untuk **deploy di GitHub Pages**
+- Ringan, responsif, dan mudah dijalankan secara lokal
 
 ---
 
@@ -20,48 +18,48 @@
 
 ### 1. Rock Paper Scissors
 
-File:
+File terkait:
 
 - `html/rps.html`
 - `css/rps.css`
 - `js/rps.js`
 
-Fitur:
+Fitur utama:
 
-- Tampilan start screen modern
+- Start screen dengan tampilan modern
 - Sistem skor **first to 10**
-- Result banner saat match selesai
-- Tombol **Start Again**
+- Hasil ronde ditampilkan secara realtime
+- Tombol **Start Again** untuk mengulang match
 
 ### 2. Memory Match
 
-File:
+File terkait:
 
 - `html/memory.html`
 - `css/memory.css`
 - `js/memory.js`
 
-Fitur:
+Fitur utama:
 
-- Level bertahap dari **6 sampai 24 kartu**
-- Preview kartu selama beberapa detik di awal level
-- Sistem **3 nyawa / hearts**
-- Pesan kemenangan saat game selesai
+- Level bertahap dari **6 hingga 24 kartu**
+- Preview posisi kartu selama **3 detik** di awal level
+- Sistem **3 nyawa**
+- Progress level dan pesan kemenangan saat game selesai
 
 ### 3. Car Racing
 
-File:
+File terkait:
 
 - `html/car.html`
 - `css/car.css`
 - `js/car.js`
 
-Fitur:
+Fitur utama:
 
-- Mobil player dan musuh menggunakan asset gambar
-- Kontrol berbasis lane agar mobil tetap rapi di jalur
-- Kecepatan game meningkat seiring waktu
-- Score berhenti saat game over
+- Mobil player dan enemy menggunakan asset gambar
+- Kontrol **arrow key** dan dukungan sentuhan untuk mobile
+- Kecepatan meningkat seiring skor bertambah
+- Game over muncul saat tabrakan terjadi
 
 ---
 
@@ -93,13 +91,15 @@ RevoFun2/
 └── index.html
 ```
 
+> File `index.html` berada di **root project** agar lebih aman dan mudah saat dideploy.
+
 ---
 
-## 🚀 Cara Menjalankan
+## 🚀 Cara Menjalankan Secara Lokal
 
-### Opsi 1 — Langsung buka di browser
+### Opsi 1 — Buka langsung di browser
 
-Buka file berikut:
+Cukup buka file berikut:
 
 ```text
 index.html
@@ -107,7 +107,22 @@ index.html
 
 ### Opsi 2 — Gunakan Live Server di VS Code
 
-Jika memakai extension **Live Server**, jalankan halaman `index.html` agar navigasi antar game lebih mudah diuji.
+Jika memakai extension **Live Server**, jalankan `index.html` agar navigasi antar halaman dan game lebih nyaman diuji.
+
+---
+
+## 🌐 Deploy ke GitHub Pages
+
+Karena project ini bersifat statis, deploy paling praktis adalah dengan **GitHub Pages**.
+
+1. Push project ke repository GitHub
+2. Buka menu **Settings** pada repository
+3. Masuk ke **Pages**
+4. Pada bagian **Build and deployment**, pilih:
+   - **Source:** `Deploy from a branch`
+   - **Branch:** `main` atau `master`
+   - **Folder:** `/ (root)`
+5. Simpan pengaturan, lalu tunggu beberapa saat hingga link website aktif
 
 ---
 
@@ -119,13 +134,14 @@ Jika memakai extension **Live Server**, jalankan halaman `index.html` agar navig
 
 ---
 
-## 📌 Catatan
+## 📌 Tujuan Project
 
-Project ini berfokus pada latihan pembuatan:
+Project ini dibuat untuk latihan:
 
-- struktur website multi-page
-- styling game UI modern
-- logika interaktif dengan JavaScript murni
+- membangun website multi-page sederhana
+- membuat tampilan UI game yang menarik
+- menerapkan logika interaktif dengan JavaScript murni
+- menyiapkan project statis agar siap di-deploy
 
 ---
 
