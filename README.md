@@ -19,36 +19,45 @@
 ## 🕹️ Daftar Game
 
 ### 1. Rock Paper Scissors
+
 File:
+
 - `html/rps.html`
 - `css/rps.css`
 - `js/rps.js`
 
 Fitur:
+
 - Tampilan start screen modern
 - Sistem skor **first to 10**
 - Result banner saat match selesai
 - Tombol **Start Again**
 
 ### 2. Memory Match
+
 File:
+
 - `html/memory.html`
 - `css/memory.css`
 - `js/memory.js`
 
 Fitur:
+
 - Level bertahap dari **6 sampai 24 kartu**
 - Preview kartu selama beberapa detik di awal level
 - Sistem **3 nyawa / hearts**
 - Pesan kemenangan saat game selesai
 
 ### 3. Car Racing
+
 File:
+
 - `html/car.html`
 - `css/car.css`
 - `js/car.js`
 
 Fitur:
+
 - Mobil player dan musuh menggunakan asset gambar
 - Kontrol berbasis lane agar mobil tetap rapi di jalur
 - Kecepatan game meningkat seiring waktu
@@ -74,14 +83,14 @@ RevoFun2/
 │   ├── memory.css
 │   └── car.css
 ├── html/
-│   ├── index.html
 │   ├── rps.html
 │   ├── memory.html
 │   └── car.html
-└── js/
-    ├── rps.js
-    ├── memory.js
-    └── car.js
+├── js/
+│   ├── rps.js
+│   ├── memory.js
+│   └── car.js
+└── index.html
 ```
 
 ---
@@ -89,13 +98,15 @@ RevoFun2/
 ## 🚀 Cara Menjalankan
 
 ### Opsi 1 — Langsung buka di browser
+
 Buka file berikut:
 
 ```text
-html/index.html
+index.html
 ```
 
 ### Opsi 2 — Gunakan Live Server di VS Code
+
 Jika memakai extension **Live Server**, jalankan halaman `index.html` agar navigasi antar game lebih mudah diuji.
 
 ---
@@ -111,6 +122,7 @@ Jika memakai extension **Live Server**, jalankan halaman `index.html` agar navig
 ## 📌 Catatan
 
 Project ini berfokus pada latihan pembuatan:
+
 - struktur website multi-page
 - styling game UI modern
 - logika interaktif dengan JavaScript murni
