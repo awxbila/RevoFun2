@@ -1,16 +1,43 @@
-# 🎮 RevoFun Arcade
+<p align="center">
+  <img src="assets/RFlogo.png" alt="RevoFun Logo" width="130" />
+</p>
 
-**RevoFun Arcade** adalah kumpulan mini game berbasis **HTML, CSS, dan JavaScript** yang bisa langsung dimainkan di browser tanpa instalasi tambahan. Project ini dibuat dengan gaya arcade modern dan struktur sederhana sehingga mudah dipelajari maupun dikembangkan.
+<h1 align="center">🎮 RevoFun</h1>
+
+<p align="center">
+  Kumpulan mini game berbasis <b>HTML</b>, <b>CSS</b>, dan <b>JavaScript</b><br>
+  dengan tampilan fun, ringan, dan siap dimainkan langsung di browser.
+</p>
+
+<p align="center">
+  <a href="http://revofun.web.id/"><b>🌐 Live Demo</b></a>
+</p>
 
 ---
 
-## ✨ Highlight Project
+## ✨ Tentang Project
 
-- **Landing page** modern dengan branding `RevoFun`
-- Terdiri dari **3 mini game interaktif**
-- Dibuat tanpa framework, murni dengan **Vanilla JavaScript**
-- Struktur file rapi dan cocok untuk **deploy di GitHub Pages**
-- Ringan, responsif, dan mudah dijalankan secara lokal
+**RevoFun** adalah website berisi beberapa game sederhana yang dibuat menggunakan **Vanilla JavaScript** tanpa framework tambahan. Project ini cocok untuk latihan front-end dasar, eksplorasi logika game, dan deployment ke **GitHub Pages**.
+
+### Highlight utama
+
+- 🎯 Terdiri dari **3 mini game interaktif**
+- 🎨 UI arcade modern dan colorful
+- ⚡ Ringan, cepat, dan mudah dijalankan
+- 📁 Struktur project rapi dan beginner-friendly
+- 🚀 Cocok untuk portfolio maupun latihan deployment
+
+---
+
+## 📸 Screenshot Project
+
+| RF1                           | RF2                                          |
+| ----------------------------- | -------------------------------------------- |
+| ![RF1 - Home](assets/RF1.png) | ![RF2 - Rock Paper Scissors](assets/RF2.png) |
+
+| RF3                                   | RF4                                 |
+| ------------------------------------- | ----------------------------------- |
+| ![RF3 - Memory Match](assets/RF3.png) | ![RF4 - Car Racing](assets/RF4.png) |
 
 ---
 
@@ -18,48 +45,44 @@
 
 ### 1. Rock Paper Scissors
 
-File terkait:
+**File terkait:** `html/rps.html`, `css/rps.css`, `js/rps.js`
 
-- `html/rps.html`
-- `css/rps.css`
-- `js/rps.js`
-
-Fitur utama:
+Fitur:
 
 - Start screen dengan tampilan modern
 - Sistem skor **first to 10**
-- Hasil ronde ditampilkan secara realtime
-- Tombol **Start Again** untuk mengulang match
+- Hasil ronde tampil secara realtime
+- Tombol **Start Again** untuk reset permainan
 
 ### 2. Memory Match
 
-File terkait:
+**File terkait:** `html/memory.html`, `css/memory.css`, `js/memory.js`
 
-- `html/memory.html`
-- `css/memory.css`
-- `js/memory.js`
+Fitur:
 
-Fitur utama:
-
-- Level bertahap dari **6 hingga 24 kartu**
-- Preview posisi kartu selama **3 detik** di awal level
+- Level bertahap dari **6 sampai 24 kartu**
+- Preview kartu selama **3 detik** di awal level
 - Sistem **3 nyawa**
-- Progress level dan pesan kemenangan saat game selesai
+- Progress game dan pesan kemenangan saat selesai
 
 ### 3. Car Racing
 
-File terkait:
+**File terkait:** `html/car.html`, `css/car.css`, `js/car.js`
 
-- `html/car.html`
-- `css/car.css`
-- `js/car.js`
+Fitur:
 
-Fitur utama:
-
-- Mobil player dan enemy menggunakan asset gambar
-- Kontrol **arrow key** dan dukungan sentuhan untuk mobile
+- Player car dan enemy car berbasis asset gambar
+- Kontrol **arrow key** dan dukungan sentuhan
 - Kecepatan meningkat seiring skor bertambah
-- Game over muncul saat tabrakan terjadi
+- Muncul status **game over** saat tabrakan
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **HTML5**
+- **CSS3**
+- **Vanilla JavaScript**
 
 ---
 
@@ -68,8 +91,13 @@ Fitur utama:
 ```text
 RevoFun2/
 ├── README.md
+├── index.html
 ├── assets/
 │   ├── RFlogo.png
+│   ├── RF1.png
+│   ├── RF2.png
+│   ├── RF3.png
+│   ├── RF4.png
 │   └── cars/
 │       ├── playercar.png
 │       ├── enemycar1.png
@@ -84,74 +112,59 @@ RevoFun2/
 │   ├── rps.html
 │   ├── memory.html
 │   └── car.html
-├── js/
-│   ├── rps.js
-│   ├── memory.js
-│   └── car.js
-└── index.html
+└── js/
+    ├── rps.js
+    ├── memory.js
+    └── car.js
 ```
 
-> File `index.html` berada di **root project** agar lebih aman dan mudah saat dideploy.
+> `index.html` berada di root project agar aman dan mudah saat di-deploy ke hosting statis.
 
 ---
 
-## 🚀 Cara Menjalankan Secara Lokal
+## 🚀 Cara Menjalankan
 
-### Opsi 1 — Buka langsung di browser
+### Opsi 1 — Langsung di browser
 
-Cukup buka file berikut:
+Buka file berikut:
 
 ```text
 index.html
 ```
 
-### Opsi 2 — Gunakan Live Server di VS Code
+### Opsi 2 — Menggunakan Live Server
 
-Jika memakai extension **Live Server**, jalankan `index.html` agar navigasi antar halaman dan game lebih nyaman diuji.
+Jika memakai extension **Live Server** di VS Code, jalankan `index.html` agar navigasi antar halaman lebih nyaman saat testing.
 
 ---
 
 ## 🌐 Deploy ke GitHub Pages
 
-Karena project ini bersifat statis, deploy paling praktis adalah dengan **GitHub Pages**.
+Karena project ini bersifat statis, deploy dapat dilakukan dengan mudah melalui **GitHub Pages**:
 
 1. Push project ke repository GitHub
-2. Buka menu **Settings** pada repository
-3. Masuk ke **Pages**
-4. Pada bagian **Build and deployment**, pilih:
+2. Masuk ke **Settings** repository
+3. Buka menu **Pages**
+4. Pilih:
    - **Source:** `Deploy from a branch`
    - **Branch:** `main` atau `master`
    - **Folder:** `/ (root)`
-5. Simpan pengaturan, lalu tunggu beberapa saat hingga link website aktif
+5. Simpan dan tunggu hingga website aktif
 
 ### 🔗 Live Demo
 
-Website dapat diakses di:
-
-```text
-http://revofun.web.id/
-```
-
-Atau klik langsung: [revofun.web.id](http://revofun.web.id/)
+- [http://revofun.web.id/](http://revofun.web.id/)
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 📌 Tujuan Pembuatan
 
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
+Project ini dibuat untuk:
 
----
-
-## 📌 Tujuan Project
-
-Project ini dibuat untuk latihan:
-
-- membangun website multi-page sederhana
-- membuat tampilan UI game yang menarik
-- menerapkan logika interaktif dengan JavaScript murni
-- menyiapkan project statis agar siap di-deploy
+- latihan membangun website multi-page sederhana
+- melatih logika interaktif dengan JavaScript murni
+- membuat UI game yang menarik dan responsif
+- menyiapkan project statis yang siap dipublikasikan
 
 ---
 
