@@ -31,11 +31,11 @@
 
 ## 📸 Screenshot Project
 
-| RF1                           | RF2                                          |
+| Home Overview                 | Game RPS Overview                            |
 | ----------------------------- | -------------------------------------------- |
 | ![RF1 - Home](assets/RF1.png) | ![RF2 - Rock Paper Scissors](assets/RF2.png) |
 
-| RF3                                   | RF4                                 |
+| Game Memory Overview                  | Game Car Overview                   |
 | ------------------------------------- | ----------------------------------- |
 | ![RF3 - Memory Match](assets/RF3.png) | ![RF4 - Car Racing](assets/RF4.png) |
 
